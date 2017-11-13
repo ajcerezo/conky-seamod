@@ -6,14 +6,11 @@ Seamod theme was built by SeaJey. I modified the original theme for conky 1.10 c
 New Features
 --------------
 
+* CPU Temp
+* CPU Load
 * Disk Read/Write 
 * Lan/Ext IP's
 * City of your IP (useful for VPN) 
-
-Screenshot
-----------------
-
-![alt text](http://i67.tinypic.com/20qz9xh.png)
 
 
 Original Theme
