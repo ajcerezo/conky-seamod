@@ -21,7 +21,7 @@ conky.config = {
 
 	gap_x = 80,
 	gap_y = 70,
-	minimum_width = 300, minimum_height = 900,
+	minimum_width = 350, minimum_height = 900,
 	maximum_width = 350,
 
 	own_window = true,
@@ -32,7 +32,7 @@ conky.config = {
 	own_window_class = 'conky-semi',
 	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
 
-	border_inner_margin = 0,
+	border_inner_margin = 10,
 	border_outer_margin = 0,
 	alignment = 'top_right',
 
