@@ -105,9 +105,9 @@ ${voffset -25}
 ${offset 90}${font Ubuntu:size=11:style=bold}${color6}DISKS
 
 ${voffset -20}
-${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${goto 200}${font Ubuntu:size=10:style=bold}${color1}Free${alignr}${goto 265}${font Ubuntu:size=10:style=bold}${color1}Used
-${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${color6}Root:${goto 190}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_free /}${alignr}${goto 260}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_used /}
-${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${color6}Home:${goto 193}${font Ubuntu:size=10:style=bold}$color3${font Ubuntu:size=10:style=normal}${fs_free /home}${alignr}${goto 263}${font Ubuntu:size=10:style=bold}$color3${font Ubuntu:size=10:style=normal}${fs_used /home}
+${offset 100}${alignc}${font Ubuntu:size=10:style=bold}${goto 182}${font Ubuntu:size=10:style=bold}${color1}Free${alignr}${goto 255}${font Ubuntu:size=10:style=bold}${color1}Used${goto 310}%Used
+${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${color6}Root:${goto 172}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_free /}${alignr}${goto 245}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_used /}${goto 325}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_used_perc /}
+${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${color6}Home:${goto 175}${font Ubuntu:size=10:style=bold}$color3${font Ubuntu:size=10:style=normal}${fs_free /home}${alignr}${goto 248}${font Ubuntu:size=10:style=bold}$color3${font Ubuntu:size=10:style=normal}${fs_used /home}${goto 325}${font Ubuntu:size=10:style=bold} $color3${font Ubuntu:size=10:style=normal}${fs_used_perc /home}
 
 # Network data (my desktop have only LAN). ETHERNET ring is mostly useless but looks pretty, main info is in the graphs
 ${voffset 45}
