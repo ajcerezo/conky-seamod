@@ -79,8 +79,8 @@ ${offset 15}${font Ubuntu:size=11:style=normal}${color1}Uptime: ${color3}$uptime
 ${voffset -20}
 ${offset 140}${font Ubuntu:size=11:style:bold}${color6}TEMP
 ${offset 160}${font Ubuntu:size=11:style=bold}${color1}CPU0: ${if_match ${execi 30 sensors|grep 'Core 0'| awk -F'+' '{print $2}' | awk -F'.' '{print $1}'} > 85}${color7}${else}${color5}${endif}${execi 30 sensors|grep 'Core 0'| awk -F'+' '{print $2}' | awk -F'.' '{print $1}'} °C ${goto 265}${color1}CPU1: ${if_match ${execi 30 sensors|grep 'Core 1'| awk -F'+' '{print $2}' | awk -F'.' '{print $1}'} > 85}${color7}${else}${color5}${endif}${execi 30 sensors|grep 'Core 1'| awk -F'+' '{print $2}' | awk -F'.' '{print $1}'} °C
-${offset 125}${cpugraph cpu0 40,220 00FF00 FF0000 -0.3 -t}${voffset -25}
-${offset 90}${font Ubuntu:size=11:style=bold}${color6}CPU
+${offset 145}${cpugraph cpu0 40,200 00FF00 FF0000 -0.3 -t}${voffset -15}
+${offset 80}${font Ubuntu:size=11:style=bold}${color6}CPU
 # Showing TOP 5 CPU-consumers
 ${offset 105}${font Ubuntu:size=11:style=normal}${color6}${top name 1}${alignr}${top cpu 1}%
 ${offset 105}${font Ubuntu:size=11:style=normal}${color1}${top name 2}${alignr}${top cpu 2}%
@@ -89,20 +89,20 @@ ${offset 105}${font Ubuntu:size=11:style=normal}${color3}${top name 4}${alignr}$
 ${offset 105}${font Ubuntu:size=11:style=normal}${color3}${top name 5}${alignr}${top cpu 5}%
 
 #Showing memory part with TOP 5
-${voffset 40}
-${offset 90}${font Ubuntu:size=11:style=bold}${color6}MEM
-${offset 105}${font Ubuntu:size=11:style=normal}${color6}${top_mem name 1}${alignr}${top_mem mem_res 1}
-${offset 105}${font Ubuntu:size=11:style=normal}${color1}${top_mem name 2}${alignr}${top_mem mem_res 2}
-${offset 105}${font Ubuntu:size=11:style=normal}${color2}${top_mem name 3}${alignr}${top_mem mem_res 3}
-${offset 105}${font Ubuntu:size=11:style=normal}${color3}${top_mem name 4}${alignr}${top_mem mem_res 4}
-${offset 105}${font Ubuntu:size=11:style=normal}${color3}${top_mem name 4}${alignr}${top_mem mem_res 5}
+${voffset 30}
+${offset 100}${font Ubuntu:size=11:style=bold}${color6}MEM
+${offset 115}${font Ubuntu:size=11:style=normal}${color6}${top_mem name 1}${alignr}${top_mem mem_res 1}
+${offset 115}${font Ubuntu:size=11:style=normal}${color1}${top_mem name 2}${alignr}${top_mem mem_res 2}
+${offset 115}${font Ubuntu:size=11:style=normal}${color2}${top_mem name 3}${alignr}${top_mem mem_res 3}
+${offset 115}${font Ubuntu:size=11:style=normal}${color3}${top_mem name 4}${alignr}${top_mem mem_res 4}
+${offset 115}${font Ubuntu:size=11:style=normal}${color3}${top_mem name 4}${alignr}${top_mem mem_res 5}
 
 # Showing disk partitions: root, home and files
 ${voffset 12}
 ${offset 180}${color1}${font Ubuntu:size=10:style=bold}Disk Read: ${alignr}${font Ubuntu:size=10:style=normal}${color2}${diskio_read}
 ${offset 180}${color1}${font Ubuntu:size=10:style=bold}Disk Write: ${alignr}${font Ubuntu:size=10:style=normal}${color2}${diskio_write}
-${voffset -25}
-${offset 90}${font Ubuntu:size=11:style=bold}${color6}DISKS
+${voffset -35}
+${offset 100}${font Ubuntu:size=11:style=bold}${color6}DISKS
 
 ${voffset -20}
 ${offset 100}${alignc}${font Ubuntu:size=10:style=bold}${goto 182}${font Ubuntu:size=10:style=bold}${color1}Free${alignr}${goto 255}${font Ubuntu:size=10:style=bold}${color1}Used${goto 310}%Used
@@ -111,18 +111,18 @@ ${offset 115}${alignc}${font Ubuntu:size=10:style=bold}${color6}Home:${goto 175}
 
 # Network data (my desktop have only LAN). ETHERNET ring is mostly useless but looks pretty, main info is in the graphs
 ${voffset 45}
-${offset 200}${font Ubuntu:size=10:style=bold}${color1}Lan IP: ${alignr}$color3${addr enp1s0}
+${offset 200}${font Ubuntu:size=10:style=bold}${color1}Lan IP: ${alignr}$color3${addr enp3s0}
 ${offset 200}${font Ubuntu:size=10:style=bold}${color1}Wifi IP: ${alignr}$color3${addr wlp2s0}
 ${offset 200}${font Ubuntu:size=10:style=bold}${color1}Ext IP: ${alignr}$color3${execi 600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1} 
 ${offset 190}${font Ubuntu:size=10:style=bold}${alignr}$color3${execi 600 wget -q -O /dev/stdout https://www.dnsleaktest.com/ | grep from | grep -o '<p>.*<img' | grep -o '>.*<' | grep -oEi '[a-zA-Z0-9 ,]+'}
 
-${voffset -60}
+${voffset -90}
 ${offset 90}${font Ubuntu:size=11:style=bold}${color6}ETHERNET
 ${voffset 40}             
-${offset 15}${color1}${font ubuntu:size=10:style=bold}Up: ${alignr}${font Ubuntu:size=10:style=normal}$color2${upspeed enp1s0} / ${totalup enp1s0}
-${offset 15}${upspeedgraph enp1s0 40,320 4B1B0C FF5C2B 1280KiB -l}
-${offset 15}${color1}${font Ubuntu:size=10:style=bold}Down: ${alignr}${font Ubuntu:size=10:style=normal}$color2${downspeed enp1s0} / ${totaldown enp1s0}
-${offset 15}${downspeedgraph enp1s0 40,320 324D23 77B753 1280KiB -l}
+${offset 15}${color1}${font ubuntu:size=10:style=bold}Up: ${alignr}${font Ubuntu:size=10:style=normal}$color2${upspeed enp3s0} / ${totalup enp3s0}
+${offset 15}${upspeedgraph enp3s0 40,320 4B1B0C FF5C2B 1280KiB -l}
+${offset 15}${color1}${font Ubuntu:size=10:style=bold}Down: ${alignr}${font Ubuntu:size=10:style=normal}$color2${downspeed enp3s0} / ${totaldown enp3s0}
+${offset 15}${downspeedgraph enp3s0 40,320 324D23 77B753 1280KiB -l}
 
 ${color6}${hr 2}
 ]];
